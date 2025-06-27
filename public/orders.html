@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - E-commerce Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .order-list-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .order-list-container h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .order-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .order-header h3 {
+            margin: 0;
+            color: #333;
+        }
+        .order-header .status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            color: white;
+            font-size: 0.9em;
+        }
+        .status.pending { background-color: #ffc107; } /* Warning yellow */
+        .status.processing { background-color: #17a2b8; } /* Info blue */
+        .status.shipped { background-color: #6f42c1; } /* Purple */
+        .status.delivered { background-color: #28a745; } /* Success green */
+        .status.cancelled { background-color: #dc3545; } /* Danger red */
+
+        .order-details p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            color: #666;
+        }
+        .order-items {
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        .order-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .order-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        .order-item-info {
+            flex-grow: 1;
+        }
+        .order-item-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 1em;
+        }
+        .order-item-info p {
+            margin: 0;
+            font-size: 0.85em;
+            color: #777;
+        }
+        #empty-orders-message {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">E-Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li id="my-orders-link"><a href="orders.html">My Orders</a></li>
+                </ul>
+            </nav>
+            <div class="auth-controls">
+                <div id="auth-links" style="display: none;">
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                </div>
+                <div id="user-info">
+                    Welcome, <span id="username-display"></span>!
+                    <button id="logout-button">Logout</button>
+                </div>
+            </div>
+            <div class="cart-info">
+                <a href="cart.html">
+                    🛒 <span id="cart-item-count">0</span> items
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="order-list-container">
+            <h2>My Orders</h2>
+            <div id="orders-list">
+                <p id="empty-orders-message" style="display: none;">You have no past orders.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 E-commerce Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

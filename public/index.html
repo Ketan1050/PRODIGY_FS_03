@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-commerce Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="main-header">
+  <div class="container header-content">
+    <div class="logo-section">
+      <h1 class="logo">🛍️ E-Store</h1>
+    </div>
+
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li id="my-orders-link" style="display: none;"><a href="orders.html">My Orders</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search products..." />
+      <button id="search-button">🔍</button>
+    </div>
+
+    <div class="auth-cart-controls">
+      <div class="auth-controls">
+        <div id="auth-links">
+          <a href="login.html">Login</a>
+          <a href="register.html">Register</a>
+        </div>
+        <div id="user-info" style="display: none;">
+          <span id="username-display"></span>
+          <button id="logout-button" class="logout-btn">Logout</button>
+        </div>
+      </div>
+
+      <div class="cart-info">
+        <a href="cart.html">
+          🛒 <span id="cart-item-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <main class="container">
+    <aside class="filters-sidebar">
+      <h3>Filters</h3>
+
+      <div class="filter-group">
+        <h4>Category</h4>
+        <select id="category-filter">
+          <option value="all">All</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Books">Books</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price Range</h4>
+        <input type="number" id="min-price" placeholder="Min Price" />
+        <input type="number" id="max-price" placeholder="Max Price" />
+        <button id="apply-price-filter">Apply</button>
+      </div>
+
+      <h3>Sort By</h3>
+      <select id="sort-by">
+        <option value="default">Default</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="name-asc">Name: A-Z</option>
+        <option value="name-desc">Name: Z-A</option>
+      </select>
+    </aside>
+
+    <section class="product-listing">
+      <div id="product-grid" class="product-grid">
+        
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 E-commerce Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
